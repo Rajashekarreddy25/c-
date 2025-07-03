@@ -112,8 +112,9 @@ int main() {
 }
 
 ```
-###🔧 C Compilation Process — Step by Step
 
+###🔧 C Compilation Process — Step by Step
+```
 Source Code (file.c)
        ↓
 🔹 Pre-processing Stage
@@ -131,6 +132,7 @@ Object Code (file.o)
 🔹 Linking Stage
        ↓
 Executable File (a.out or custom name)
+```
 📘 Explanation of Each Stage:
 🔹 1. Source Code (file.c)
 The raw C program written by the user.
