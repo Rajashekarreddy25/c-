@@ -112,3 +112,90 @@ int main() {
 }
 
 ```
+###🔧 C Compilation Process — Step by Step
+
+Source Code (file.c)
+       ↓
+🔹 Pre-processing Stage
+       ↓
+Preprocessed Code (file.i)
+       ↓
+🔹 Compilation Stage
+       ↓
+Assembly Code (file.s)
+       ↓
+🔹 Assembly Stage
+       ↓
+Object Code (file.o)
+       ↓
+🔹 Linking Stage
+       ↓
+Executable File (a.out or custom name)
+📘 Explanation of Each Stage:
+🔹 1. Source Code (file.c)
+The raw C program written by the user.
+
+Example:
+
+```
+#include <stdio.h>
+#define PI 3.14
+
+int main() {
+    float area;
+    area = PI * 2 * 2;
+    printf("Area = %f\n", area);
+    return 0;
+}
+```
+🔹 2. Pre-processing Stage
+Removes comments.
+
+Expands macros (#define, #include).
+
+Conditional compilation with #ifdef, #ifndef.
+
+Tool: C Preprocessor (cpp)
+Output: file.i
+```
+gcc -E file.c -o file.i
+```
+🔹 3. Compilation Stage
+Converts preprocessed code into Assembly Code.
+
+Syntax and semantic checking.
+
+Basic optimizations.
+
+Tool: Compiler (gcc)
+Output: file.s
+```
+gcc -S file.i -o file.s
+```
+🔹 4. Assembly Stage
+Translates .s (assembly) to .o (object code).
+
+Machine-level instructions generated.
+
+Tool: Assembler (as)
+Output: file.o
+```
+gcc -c file.s -o file.o
+```
+🔹 5. Linking Stage
+Combines one or more .o files and libraries.
+
+Resolves function calls (printf, etc.).
+
+Produces final executable.
+
+Tool: Linker (ld via gcc)
+Output: a.out (default) or ./your_program
+```
+gcc file.o -o output
+```
+✅ Final Output: Executable File
+This is the final runnable program:
+```
+./output
+```
