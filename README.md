@@ -13,12 +13,12 @@
 
 ### character set:
 
-we have 4 Categories in character set 
+We have 4 Categories in character set 
 
-1.Alphbets:
-### Arrays in c
+1. Alphabets:
+### Arrays in C
 
-### array is a data strucutre which is used to store elements of same data type and memory allocated is contigou
+### An array is a data structure that is used to store elements of the same data type, and memory allocated is contiguous
 
 
 ✅ Field Width, Precision, and Suppression in C (printf() and scanf())
