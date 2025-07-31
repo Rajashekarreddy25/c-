@@ -201,3 +201,118 @@ This is the final runnable program:
 ```
 ./output
 ```
+# ✅  Static Variable in C
+A static variable retains its value between function calls.
+
+Scope is local to the function, but it is not destroyed when the function exits.
+
+Example:
+
+
+```
+#include <stdio.h>
+
+void demo() {
+    static int x = 0;
+    x++;
+    printf("%d\n", x);
+}
+
+int main() {
+    demo(); // 1
+    demo(); // 2
+    demo(); // 3
+    return 0;
+}
+```
+->>Without static, x would always be 1 in each call.
+
+
+# ✅ 2. Break and Continue
+🔹 break:
+Exits the loop or switch immediately.
+
+🔹 continue:
+Skips the current iteration and jumps to the next.
+
+Example:
+```
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        if (i == 3) continue;  // skip when i == 3
+        if (i == 5) break;     // stop loop when i == 5
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+
+# ✅ 3. Enum (Enumeration) in C
+Used to assign names to integer constants for better readability.
+
+Example:
+
+```
+#include <stdio.h>
+
+enum week { MON=1, TUE, WED, THU, FRI, SAT, SUN };
+
+int main() {
+    enum week today = WED;
+    printf("Day number: %d", today); // Output: 3
+    return 0;
+}
+
+```
+
+If you don't assign numbers, it starts from 0 by default.
+
+
+# ✅ 4. Call by Value vs Call by Reference
+🔹 Call by Value:
+A copy of the variable is passed.
+
+Changes inside the function don’t affect the original variable.
+
+```
+void modify(int x) {
+    x = x + 10;
+}
+```
+🔹 Call by Reference:
+Address of the variable is passed (using pointers).
+
+Changes inside the function affect the original variable.
+```
+void modify(int *x) {
+    *x = *x + 10;
+}
+
+```
+
+
+```
+#include <stdio.h>
+
+void byValue(int x) {
+    x = 10;
+}
+
+void byReference(int *x) {
+    *x = 10;
+}
+
+int main() {
+    int a = 5, b = 5;
+
+    byValue(a);        // a is still 5
+    byReference(&b);   // b becomes 10
+
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+    return 0;
+}
+
+```
