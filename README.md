@@ -316,3 +316,93 @@ int main() {
 }
 
 ```
+#📘 Dynamic Memory Allocation (DMA) in C
+
+In C, Dynamic Memory Allocation (DMA) allows you to allocate memory at runtime, instead of fixing the size at compile time.
+The standard library <stdlib.h> provides four main functions:
+
+malloc()
+
+calloc()
+
+realloc()
+
+free()
+
+🔹 1. malloc()
+```
+Syntax:
+ptr = (type *)malloc(size_in_bytes);
+```
+Allocates a block of memory of given size (in bytes).
+
+The content is uninitialized (contains garbage values).
+
+Returns a pointer to the first byte of allocated memory.
+
+Returns NULL if allocation fails.
+```
+int *arr;
+arr = (int *)malloc(3 * sizeof(int));
+
+arr[0] = 10;
+arr[1] = 20;
+arr[2] = 30;
+```
+
+🔹 2. calloc()
+```
+Syntax:
+
+ptr = (type *)calloc(num_elements, size_of_each);
+```
+
+Allocates memory for an array of elements.
+
+Initializes all elements to zero.
+
+Returns NULL if allocation fails.
+
+Example:
+```
+int *arr;
+arr = (int *)calloc(3, sizeof(int));
+
+// All values are automatically 0
+```
+🔹 3. realloc()
+```
+Syntax:
+
+ptr = (type *)realloc(ptr, new_size_in_bytes);
+```
+
+Resizes previously allocated memory.
+
+Keeps old data intact and adds extra space if needed.
+
+Returns NULL if reallocation fails (old memory remains valid).
+
+Example:
+```
+arr = (int *)realloc(arr, 5 * sizeof(int));
+arr[3] = 40;
+arr[4] = 50;
+```
+🔹 4. free()
+
+Syntax:
+```
+free(ptr);
+
+```
+Releases allocated memory back to the system.
+
+Must be called when memory is no longer needed.
+
+After free(), the pointer becomes invalid (dangling).
+
+Example:
+```
+free(arr);
+```
