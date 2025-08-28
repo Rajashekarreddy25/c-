@@ -406,3 +406,91 @@ Example:
 ```
 free(arr);
 ```
+#Storage Classes in C
+
+Storage classes in C define the scope (visibility), lifetime, and storage location of variables and functions.
+They tell the compiler:
+
+Where the variable is stored (memory/RAM or CPU register)
+
+How long the variable exists (lifetime)
+
+Where it can be accessed (scope)
+
+Default initial value
+
+###1. auto
+
+Default storage class for local variables inside functions.
+
+Scope: Local to the block/function.
+
+Lifetime: Created when function is called, destroyed when function ends.
+
+Default value: Garbage (undefined).
+
+Example:
+```
+void func() {
+    auto int x = 5; // same as just 'int x = 5;
+}
+```
+###2. register
+
+Requests the compiler to store the variable in a CPU register (for faster access).
+
+Scope: Local to the block/function.
+
+Lifetime: Function call duration.
+
+Default value: Garbage.
+
+Cannot use & (address-of) operator with it (since it may not be in RAM).
+
+Example:
+```
+void func() {
+    register int i;
+    for (i = 0; i < 10; i++) {
+        // fast access counter
+    }
+}
+```
+###3. static
+
+Preserves the value of a variable between multiple function calls.
+
+Scope: Local to the block/function (if declared inside function), OR global (if outside).
+
+Lifetime: Entire program execution.
+
+Default value: Zero.
+
+Example:
+```
+void func() {
+    static int count = 0; 
+    count++;
+    printf("%d\n", count);
+}
+// Each call remembers the old value
+```
+###4. extern
+
+Used to declare a global variable or function that is defined in another file.
+
+Scope: Global (visible to all files).
+
+Lifetime: Entire program execution.
+
+Default value: Zero.
+
+Example:
+```
+// file1.c
+int num = 10;
+
+// file2.c
+extern int num;
+printf("%d", num); // uses variable from file1
+```
