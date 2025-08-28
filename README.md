@@ -406,7 +406,8 @@ Example:
 ```
 free(arr);
 ```
-#Storage Classes in C
+## Storage Classes in C
+
 
 Storage classes in C define the scope (visibility), lifetime, and storage location of variables and functions.
 They tell the compiler:
@@ -419,7 +420,7 @@ Where it can be accessed (scope)
 
 Default initial value
 
-###1. auto
+### 1. auto
 
 Default storage class for local variables inside functions.
 
@@ -435,7 +436,7 @@ void func() {
     auto int x = 5; // same as just 'int x = 5;
 }
 ```
-###2. register
+### 2. register
 
 Requests the compiler to store the variable in a CPU register (for faster access).
 
@@ -456,7 +457,7 @@ void func() {
     }
 }
 ```
-###3. static
+### 3. static
 
 Preserves the value of a variable between multiple function calls.
 
@@ -475,7 +476,7 @@ void func() {
 }
 // Each call remembers the old value
 ```
-###4. extern
+### 4. extern
 
 Used to declare a global variable or function that is defined in another file.
 
