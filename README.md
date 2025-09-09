@@ -495,3 +495,52 @@ int num = 10;
 extern int num;
 printf("%d", num); // uses variable from file1
 ```
+
+
+
+### 🔹 What is a Function Pointer?
+
+A function pointer is a pointer that stores the address of a function.
+Just like you can have a pointer to an int or char, you can also have a pointer to a function.
+
+--->A function pointer is a variable that stores the memory address of a function, allowing it to be called indirectly or passed as an argument to another function.
+
+🔹 Syntax:
+```
+return_type (*pointer_name)(parameter_types);
+
+
+Example:
+
+int (*func_ptr)(int, int);
+
+```
+👉 This means func_ptr is a pointer to a function that takes two int arguments and returns an int.
+
+🔹 Example 1: Simple function pointer
+```
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Declare function pointer
+    int (*func_ptr)(int, int);
+
+    // Assign address of function
+    func_ptr = add;
+
+    // Call function using pointer
+    int result = func_ptr(10, 20);
+
+    printf("Result = %d\n", result);
+    return 0;
+}
+```
+
+✅ Output:
+```
+Result = 30
+```
