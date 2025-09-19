@@ -1,17 +1,18 @@
-#include<stdio.h>
-#include<math.h>// gcc binaryToDecimal.c -lm
-int main(){
-int n,rem;
-int res=0;
-printf("enter a no:");
-scanf("%d",&n);
-int i=0;
-while(n>0){
-rem=n%10;
-res+=pow(2,i);
-n/=10;
-i++;
-}
-printf("%d",res);
-return 0;
+#include <stdio.h>
+#include <math.h>   // gcc program.c -lm
+
+int main() {
+    int n, rem, res = 0, base = 1;
+    printf("Enter a binary number: ");
+    scanf("%d", &n);
+
+    while (n > 0) {
+        rem = n % 10;         // extract last binary digit (0 or 1)
+        res += rem * base;    // add digit × current base
+        base *= 2;            // next power of 2
+        n /= 10;              // remove last digit
+    }
+
+    printf("Decimal = %d\n", res);
+    return 0;
 }
