@@ -544,3 +544,32 @@ int main() {
 ```
 Result = 30
 ```
+### 2. Static Function
+
+- A function declared with static keyword.
+
+- Its scope is limited to the file where it is defined.
+
+- It cannot be called from other .c files (used in modular programming).
+
+Example:
+```
+#include <stdio.h>
+
+static void showMessage() {  // static function
+    printf("Hello from static function!\n");
+}
+
+int main() {
+    showMessage();  // Works here
+    return 0;
+}
+```
+
+👉 But if another .c file tries to call showMessage(), it will give an error because it is private to its file.
+
+✅ Summary:
+
+- static variable → keeps its value even after function exits.
+
+- static function → accessible only within the same file (file scope).
