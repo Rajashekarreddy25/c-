@@ -573,3 +573,83 @@ int main() {
 - static variable → keeps its value even after function exits.
 
 - static function → accessible only within the same file (file scope).
+
+##🔹 What is a Function in C?
+
+A function is a block of code that performs a specific task.
+Functions make programs modular, readable, and reusable.
+
+There are two main types of functions in C:
+
+Library Functions
+
+User-defined Functions
+
+###🧩 1. Library Functions
+
+These are predefined functions provided by C libraries (like <stdio.h>, <math.h>, etc.).
+
+####✳️ Examples:
+
+| Function   | Header File  | Purpose            |
+| ---------- | ------------ | ------------------ |
+| `printf()` | `<stdio.h>`  | Print output       |
+| `scanf()`  | `<stdio.h>`  | Take input         |
+| `sqrt()`   | `<math.h>`   | Find square root   |
+| `strlen()` | `<string.h>` | Find string length |
+| `pow()`    | `<math.h>`   | Power calculation  |
+
+###🧠 2. User-defined Functions
+
+These are functions that you write yourself to perform specific tasks.
+
+A function has four parts:
+
+return_type function_name(parameter list) {
+    // function body
+}
+
+🔹 Based on Arguments and Return Type:
+
+There are 4 types of user-defined functions:
+
+Type	Arguments	Return Value	Example
+1️⃣ Function with no arguments & no return value	❌	❌	void greet();
+2️⃣ Function with arguments but no return value	✅	❌	void sum(int a, int b);
+3️⃣ Function with no arguments but returns value	❌	✅	int getNumber();
+4️⃣ Function with arguments and returns value	✅	✅	int add(int a, int b);
+🧾 Example of Each:
+1️⃣ No Arguments, No Return
+```
+#include <stdio.h>
+void greet() {
+    printf("Hello, Welcome!\n");
+}
+
+int main() {
+    greet();
+    return 0;
+}
+```
+2️⃣ Arguments, No Return
+```
+void sum(int a, int b) {
+    printf("Sum = %d\n", a + b);
+}
+``
+3️⃣ No Arguments, With Return
+```
+int getNumber() {
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    return x;
+}
+```
+
+4️⃣ Arguments, With Return
+```
+int add(int a, int b) {
+    return a + b;
+}
+```
