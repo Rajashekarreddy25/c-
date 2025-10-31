@@ -614,11 +614,17 @@ return_type function_name(parameter list) {
 There are 4 types of user-defined functions:
 
 Type	Arguments	Return Value	Example
+
 1️⃣ Function with no arguments & no return value	❌	❌	void greet();
+
 2️⃣ Function with arguments but no return value	✅	❌	void sum(int a, int b);
+
 3️⃣ Function with no arguments but returns value	❌	✅	int getNumber();
+
 4️⃣ Function with arguments and returns value	✅	✅	int add(int a, int b);
+
 🧾 Example of Each:
+
 1️⃣ No Arguments, No Return
 ```
 #include <stdio.h>
