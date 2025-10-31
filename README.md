@@ -574,7 +574,7 @@ int main() {
 
 - static function → accessible only within the same file (file scope).
 
-##🔹 What is a Function in C?
+## 🔹 What is a Function in C?
 
 A function is a block of code that performs a specific task.
 Functions make programs modular, readable, and reusable.
@@ -585,11 +585,11 @@ Library Functions
 
 User-defined Functions
 
-###🧩 1. Library Functions
+### 🧩 1. Library Functions
 
 These are predefined functions provided by C libraries (like <stdio.h>, <math.h>, etc.).
 
-####✳️ Examples:
+#### ✳️ Examples:
 
 | Function   | Header File  | Purpose            |
 | ---------- | ------------ | ------------------ |
@@ -599,7 +599,7 @@ These are predefined functions provided by C libraries (like <stdio.h>, <math.h>
 | `strlen()` | `<string.h>` | Find string length |
 | `pow()`    | `<math.h>`   | Power calculation  |
 
-###🧠 2. User-defined Functions
+### 🧠 2. User-defined Functions
 
 These are functions that you write yourself to perform specific tasks.
 
