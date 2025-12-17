@@ -659,3 +659,121 @@ int add(int a, int b) {
     return a + b;
 }
 ```
+```
+
+### 🎲 rand() Function in C
+#### 📌 What is rand()?
+
+- rand() is a standard C library function used to generate pseudo-random numbers.
+
+📂 Header file:
+```
+#include <stdlib.h>
+```
+🔹 Syntax
+```
+int rand(void);
+```
+🔹 Return Value
+
+- Returns a pseudo-random integer
+
+Range:
+```
+0  to  RAND_MAX
+```
+
+- (RAND_MAX is usually 32767)
+
+#### 🔹 Why is it called pseudo-random?
+
+Numbers are not truly random
+
+Generated using a mathematical algorithm
+
+Same sequence repeats unless we change the seed
+
+#### 🔑 srand() – Seed Function
+
+To get different random values every time, use:
+```
+srand(seed);
+
+```
+Common seed:
+```
+srand(time(NULL));
+```
+
+📂 Required header:
+```
+#include <time.h>
+```
+✅ Basic Example
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf("%d\n", rand());
+    return 0;
+}
+
+```
+🔹 Output (same every run):
+```
+1804289383
+```
+#### ✅ Example with srand()
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(NULL));   // seed
+    printf("%d\n", rand());
+    return 0;
+}
+```
+
+**🔹 Output (different every run):**
+```
+24567
+```
+🔢 Generate Random Numbers in a Range
+🎯 0 to 9
+```
+rand() % 10;
+```
+🎯 1 to 10
+```
+(rand() % 10) + 1;
+```
+🎯 10 to 50
+```
+(rand() % 41) + 10;
+```
+🧵 rand() in Threads (Important!)
+
+rand() is NOT thread-safe
+
+Use mutex or rand_r() in multithreading
+
+Example with Mutex
+```
+pthread_mutex_lock(&lock);
+int r = rand();
+pthread_mutex_unlock(&lock);
+```
+### 🧠 Important Points (Exam Focus)
+
+- rand() → generates pseudo-random numbers
+
+- srand() → sets seed
+
+- Call srand() once per program
+
+- % operator limits range
+
+- Not suitable for cryptography
